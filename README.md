@@ -11,7 +11,7 @@ Board A (Exchange) - periodically sends a minimal UDP packet (a "tick") to Board
 Board B (Trader) - receives every tick and echoes it back immediately, unconditionally. In parallel, it displays the board's CPU/memory usage and lets you toggle between blocking (poll) and busy-poll network reads via a physical button - visibly reflected on the CPU bar.
 
 
-Prerequisites  
+## Prerequisites  
 This project does not run standalone on a generic Linux machine. It requires:
 
 - an FRDM-IMX93 board with the LKSS Daughter Board
