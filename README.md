@@ -2,7 +2,7 @@
 
 Tick-to-trade latency analyzer built on two FRDM-IMX93 + LKSS Daughter Board setups, developed during the hackathon of NXP's Linux Kernel Summer School (LKSS) 2026.
 
-##The main configuration:
+## The main configuration:
 Two fully separate embedded Linux nodes communicate over a direct Ethernet cable  
 The goal is to trace a full system path - from a hardware interrupt (a physical button on the hackpad), through the kernel driver, through userspace, through a UDP socket, over the network, and back - and measure where time is spent at each stage.
 
