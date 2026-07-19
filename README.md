@@ -32,7 +32,7 @@ LVGL framebuffer display
 
 ### Exchange node — latency chart
 
-![Exchange node latency chart](docs/images/exchange-node.jpg)
+<img src="docs/images/exchange-node.jpg" alt="Exchange node latency chart" width="320">
 
 The Exchange node sends UDP ticks to the Trader node, receives the echoed packets, computes round-trip time, and plots the latency on a scrolling LVGL chart.
 
@@ -51,7 +51,7 @@ LIVE / PAUSED state
 
 ### Trader node — poll mode
 
-![Trader node poll mode](docs/images/trader-poll-live.jpg)
+<img src="docs/images/trader-poll-live.jpg" alt="Trader node in poll mode receiving packets" width="320">
 
 The Trader node receives packets from the Exchange, echoes them back, and displays system and network telemetry in a retro terminal-style interface.
 
@@ -59,13 +59,13 @@ In normal `POLL` mode, the network thread waits for incoming packets instead of 
 
 ### Trader node — paused Exchange
 
-![Trader node while Exchange is paused](docs/images/trader-poll-paused.jpg)
+<img src="docs/images/trader-poll-paused.jpg" alt="Trader node in poll mode while Exchange is paused" width="320">
 
 When the Exchange node is paused, the Trader stops receiving packets and the message rate drops to `0/s`.
 
 ### Trader node — busy mode
 
-![Trader node busy mode](docs/images/trader-busy-mode.jpg)
+<img src="docs/images/trader-busy-mode.jpg" alt="Trader node in busy mode with higher CPU usage" width="320">
 
 The Trader node can switch from `POLL` mode to `BUSY` mode using the physical button `SW3`. In busy mode, the network thread repeatedly checks the UDP socket using non-blocking receive. This increases CPU load visibly; in the hardware demo, CPU usage rose from around 9–10% to over 60%.
 
