@@ -495,33 +495,6 @@ Expected behavior:
 - pausing the Exchange drops the Trader packet rate to `0/s`;
 - switching the Trader to `BUSY` mode increases CPU usage.
 
-## Debugging Notes
-
-Common issues:
-
-```text
-No eth0:
-    Ethernet/FEC support or Device Tree configuration is missing.
-
-eth0 exists but no link:
-    cable is disconnected, the other board is off, or the interface is not up.
-
-ping fails:
-    static IPs are wrong, subnet mismatch, or duplicate MAC/IP configuration.
-
-Trader display shows 0 msg/s:
-    Exchange is paused, not running, or sending to the wrong IP/port.
-
-Exchange chart is empty:
-    Trader is not echoing packets back, or packet format/port mismatch exists.
-
-RTT values look wrong:
-    returned packet does not contain the original seq, or send timestamp lookup failed.
-
-BUSY mode does not increase CPU:
-    the mode flag is not reaching the network thread or the socket is not non-blocking.
-```
-
 ## Limitations
 
 - The trading data is simulated and used for visual context.
@@ -529,11 +502,6 @@ BUSY mode does not increase CPU:
 - The automatic tick source is an LVGL timer.
 - Physical buttons are used for runtime control and hardware feedback.
 - The project depends on the LKSS FRDM-IMX93 hardware setup.
-
-## Team
-
-- **Ana-Maria Ghica** — Exchange node, UDP tick generation, latency chart, RTT statistics, Host A UI.
-- **Eliza-Maria Niculae** — Trader node, UDP echo responder, system telemetry parsing, `POLL`/`BUSY` mode, terminal-style Host B dashboard, GitHub project structuring.
 
 ## Why This Project Matters
 
